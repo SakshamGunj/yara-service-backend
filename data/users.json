@@ -1,0 +1,9 @@
+[
+  {
+    "id": "admin",
+    "name": "Admin User",
+    "email": "admin@yaraescapejourneys.com",
+    "password": "admin123",
+    "role": "admin"
+  }
+]

@@ -1,0 +1,88 @@
+[
+  {
+    "id": "pkg1",
+    "title": "Gangtok Explorer",
+    "description": "Discover the beauty of Gangtok with our 3-day comprehensive tour package.",
+    "price": 12999,
+    "duration": "3 days",
+    "locations": [
+      "Gangtok",
+      "Nathula Pass",
+      "Tsomgo Lake"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1566396223585-c8747795ca6d?q=80&w=1365&auto=format&fit=crop",
+    "featured": true,
+    "includes": [
+      "Accommodation",
+      "Transportation",
+      "Sightseeing",
+      "Guide"
+    ],
+    "itinerary": [
+      {
+        "day": "Day 1",
+        "title": "Arrival & Local Sightseeing",
+        "description": "Arrive in Gangtok, check-in to hotel, visit local attractions like MG Road and Flower Show."
+      },
+      {
+        "day": "Day 2",
+        "title": "Tsomgo Lake & Baba Mandir",
+        "description": "Full day excursion to the stunning Tsomgo Lake and sacred Baba Mandir."
+      },
+      {
+        "day": "Day 3",
+        "title": "Departure",
+        "description": "After breakfast, visit local markets for souvenir shopping before departure."
+      }
+    ]
+  },
+  {
+    "id": "pkg2",
+    "title": "North Sikkim Adventure",
+    "description": "Experience the majestic landscapes of North Sikkim in this thrilling 5-day adventure.",
+    "price": 24999,
+    "duration": "5 days",
+    "locations": [
+      "Gangtok",
+      "Lachen",
+      "Lachung",
+      "Yumthang Valley"
+    ],
+    "imageUrl": "https://images.unsplash.com/photo-1602602224355-6438f63e1f40?q=80&w=1372&auto=format&fit=crop",
+    "featured": true,
+    "includes": [
+      "Accommodation",
+      "Transportation",
+      "Meals",
+      "Permits",
+      "Guide"
+    ],
+    "itinerary": [
+      {
+        "day": "Day 1",
+        "title": "Gangtok Arrival",
+        "description": "Arrive in Gangtok and prepare for the adventure ahead."
+      },
+      {
+        "day": "Day 2",
+        "title": "Gangtok to Lachen",
+        "description": "Travel to Lachen, visiting Chungthang and Seven Sisters Waterfall en route."
+      },
+      {
+        "day": "Day 3",
+        "title": "Gurudongmar Lake Excursion",
+        "description": "Early morning drive to the breathtaking Gurudongmar Lake."
+      },
+      {
+        "day": "Day 4",
+        "title": "Lachen to Lachung",
+        "description": "Transfer to Lachung, known for its beautiful valleys and waterfalls."
+      },
+      {
+        "day": "Day 5",
+        "title": "Yumthang Valley & Return",
+        "description": "Visit the stunning Yumthang Valley before returning to Gangtok."
+      }
+    ]
+  }
+]

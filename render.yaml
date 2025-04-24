@@ -11,3 +11,11 @@ services:
         value: 8080
     healthCheckPath: /api/health
     autoDeploy: true
+
+# Google Cloud deployment information (for reference)
+gcp:
+  project: funk-456015
+  region: us-central1
+  service: yara-service-backend
+  memory: 256Mi
+  cpu: 1

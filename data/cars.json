@@ -1,0 +1,24 @@
+[
+  {
+    "id": "car1",
+    "model": "Toyota Innova Crysta",
+    "category": "SUV",
+    "seats": 7,
+    "transmission": "automatic",
+    "ac": true,
+    "dailyRate": 3500,
+    "imageUrl": "https://images.unsplash.com/photo-1489824904134-891ab64532f1?q=80&w=1200&auto=format&fit=crop",
+    "description": "Spacious and comfortable SUV perfect for family trips across Sikkim's varied terrain."
+  },
+  {
+    "id": "car2",
+    "model": "Mahindra Thar",
+    "category": "Jeep",
+    "seats": 4,
+    "transmission": "manual",
+    "ac": true,
+    "dailyRate": 2800,
+    "imageUrl": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop",
+    "description": "Rugged and reliable 4x4 ideal for adventure enthusiasts and off-road experiences."
+  }
+]
