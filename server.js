@@ -43,6 +43,7 @@ function ensureDataFile(fileName) {
   const filePath = path.join(DATA_DIR, fileName);
   if (!fs.existsSync(filePath)) {
     fs.writeFileSync(filePath, JSON.stringify([]));
+    console.log(`Created empty ${fileName}`);
   }
 }
 
@@ -51,27 +52,36 @@ function readData(fileName) {
   const filePath = path.join(DATA_DIR, fileName);
   const data = fs.readFileSync(filePath, 'utf8');
   
-  // If the file exists but is empty or contains empty array, reinitialize with demo data
-  if (!data || data === '[]') {
-    console.log(`File ${fileName} exists but is empty. Reinitializing with demo data.`);
-    const demoData = getDemoData();
-    if (demoData[fileName]) {
-      writeData(fileName, demoData[fileName]);
-      return demoData[fileName];
-    }
+  try {
+    return JSON.parse(data);
+  } catch (error) {
+    console.error(`Error parsing ${fileName}: ${error.message}`);
+    return [];
   }
-  
-  return JSON.parse(data);
 }
 
 function writeData(fileName, data) {
   const filePath = path.join(DATA_DIR, fileName);
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+  try {
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+    console.log(`Updated ${fileName} successfully`);
+    return true;
+  } catch (error) {
+    console.error(`Error writing to ${fileName}: ${error.message}`);
+    return false;
+  }
 }
 
-// Separate function to get demo data for reuse
-function getDemoData() {
-  return {
+// Initialize data directory and files
+function initializeDataFiles() {
+  // Ensure data directory exists
+  if (!fs.existsSync(DATA_DIR)) {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+    console.log(`Created data directory at ${DATA_DIR}`);
+  }
+  
+  // Initial data for all resources
+  const initialData = {
     'packages.json': [
       {
         id: "pkg1",
@@ -231,8 +241,7 @@ function getDemoData() {
             description: "After Breakfast, we will proceed towards your return journey; will drop you at NJP/BAGDOGRA. Here your trip will end with a happy note."
           }
         ]
-      },
-      // Add this after the last package and before the closing bracket of the packages array
+      }
     ],
     'cars.json': [
       {
@@ -336,22 +345,22 @@ function getDemoData() {
       {
         id: "bike4",
         model: "Royal Enfield 350",
-        category: "Scooter",
-        engineCapacity: "125cc",
+        category: "Cruiser",
+        engineCapacity: "350cc",
         dailyRate: "Contact for price",
-        gearType: "automatic",
+        gearType: "manual",
         imageUrl: "https://i.ibb.co/n8wczcTJ/2023-Royal-Enfield-Bullet-350-1693620256587-1711424746913.webp",
-        description: "Powerful scooter with extra comfort for exploring urban areas and nearby attractions."
+        description: "Classic motorcycle with timeless design, perfect for cruising around Sikkim's scenic roads."
       },
       {
-        id: "bike4",
+        id: "bike5",
         model: "Himalayan 411",
-        category: "Scooter",
-        engineCapacity: "125cc",
+        category: "Adventure",
+        engineCapacity: "411cc",
         dailyRate: "Contact for price",
-        gearType: "automatic",
+        gearType: "manual",
         imageUrl: "https://i.ibb.co/rP69FNg/royalenfieldhimalayan411-3.jpg",
-        description: "Powerful scooter with extra comfort for exploring urban areas and nearby attractions."
+        description: "Versatile adventure motorcycle built for exploring Sikkim's challenging terrain and mountain passes."
       }
     ],
     'bookings.json': [],
@@ -366,20 +375,19 @@ function getDemoData() {
       }
     ]
   };
-}
-
-// Initialize with demo data
-function initializeDemoData() {
-  // Import demo data
-  const demoData = getDemoData();
-
-  // Initialize each file with demo data
-  Object.entries(demoData).forEach(([fileName, data]) => {
+  
+  // Create files if they don't exist and initialize with data
+  Object.entries(initialData).forEach(([fileName, data]) => {
     const filePath = path.join(DATA_DIR, fileName);
-    // Always write the demo data regardless of whether file exists
-    writeData(fileName, data);
-    console.log(`Initialized ${fileName} with demo data`);
+    if (!fs.existsSync(filePath)) {
+      fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+      console.log(`Created ${fileName} with sample data`);
+    } else {
+      console.log(`${fileName} already exists, keeping existing data`);
+    }
   });
+  
+  console.log('Data files initialized successfully');
 }
 
 // API Routes
@@ -391,26 +399,6 @@ app.get('/api/health', (req, res) => {
     message: 'API is running',
     timestamp: new Date().toISOString()
   });
-});
-
-// Setup database with demo data
-app.get('/api/setup-db', (req, res) => {
-  try {
-    initializeDemoData();
-    res.json({ success: true, message: 'Database initialized with demo data' });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-// Add a new endpoint to force reinitialize demo data
-app.get('/api/reset-db', (req, res) => {
-  try {
-    initializeDemoData();
-    res.json({ success: true, message: 'Database reset with demo data' });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
 });
 
 // Add data verification endpoint
@@ -478,9 +466,13 @@ resources.forEach(resource => {
       };
       
       data.push(newItem);
-      writeData(fileName, data);
+      const success = writeData(fileName, data);
       
-      res.status(201).json(newItem);
+      if (success) {
+        res.status(201).json(newItem);
+      } else {
+        res.status(500).json({ error: 'Failed to save data' });
+      }
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
@@ -504,9 +496,13 @@ resources.forEach(resource => {
       };
       
       data[index] = updatedItem;
-      writeData(fileName, data);
+      const success = writeData(fileName, data);
       
-      res.json(updatedItem);
+      if (success) {
+        res.json(updatedItem);
+      } else {
+        res.status(500).json({ error: 'Failed to save changes' });
+      }
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
@@ -522,9 +518,13 @@ resources.forEach(resource => {
         return res.status(404).json({ error: 'Item not found' });
       }
       
-      writeData(fileName, filteredData);
+      const success = writeData(fileName, filteredData);
       
-      res.json({ success: true });
+      if (success) {
+        res.json({ success: true });
+      } else {
+        res.status(500).json({ error: 'Failed to delete item' });
+      }
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
@@ -576,8 +576,8 @@ app.get('/', (req, res) => {
   });
 });
 
-// Initialize demo data on startup
-initializeDemoData();
+// Initialize data files on startup
+initializeDataFiles();
 
 // Start the server
 app.listen(PORT, () => {

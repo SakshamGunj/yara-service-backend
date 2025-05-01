@@ -1,7 +1,7 @@
 [
   {
     "id": "pkg1",
-    "title": "Gangtok Explorer",
+    "title": "Yara Escape",
     "description": "Discover the beauty of Gangtok with our 3-day comprehensive tour package.",
     "price": 12999,
     "duration": "3 days",
@@ -84,5 +84,75 @@
         "description": "Visit the stunning Yumthang Valley before returning to Gangtok."
       }
     ]
+  },
+  {
+    "id": "p_a8ceed89",
+    "title": "Test Package - Darjeeling Explorer",
+    "description": "Explore the beautiful tea gardens and mountain views of Darjeeling in this exciting 4-day package.",
+    "price": "15999",
+    "duration": "4 days / 3 nights",
+    "locations": [
+      "Darjeeling",
+      "Tiger Hill",
+      "Batasia Loop",
+      "Ghoom Monastery"
+    ],
+    "imageUrl": "https://i.ibb.co/example-image.jpg",
+    "featured": false,
+    "startDate": "2025-06-10",
+    "endDate": "2025-06-13",
+    "maxPersons": 12,
+    "registrationNumber": "SK/2025/A00470/DCG",
+    "about": "Experience the best of Darjeeling with our carefully curated package. Visit the famous tea gardens, watch the sunrise from Tiger Hill, and enjoy the mountain views.",
+    "includes": [
+      "Non-sharing vehicle",
+      "Standard accommodation",
+      "Breakfast only",
+      "All permits and taxes",
+      "Sightseeing as per itinerary"
+    ],
+    "excludes": [
+      "Airfare/Trainfare",
+      "Lunch and Dinner",
+      "Personal expenses",
+      "Anything not mentioned in inclusions"
+    ],
+    "termsAndConditions": [
+      "Booking: 50% advance payment required",
+      "Cancellation: No refund within 7 days of travel",
+      "ID proof required for all travelers"
+    ],
+    "accommodation": [
+      {
+        "location": "Darjeeling",
+        "hotel": "Hotel Summit",
+        "nights": 3,
+        "category": "Standard",
+        "rooms": 5
+      }
+    ],
+    "itinerary": [
+      {
+        "day": "Day 1",
+        "title": "Arrival in Darjeeling",
+        "description": "Pickup from NJP Railway Station/Bagdogra Airport. Drive to Darjeeling (2-3 hours). Check-in to hotel. Evening free for local exploration. Overnight stay in Darjeeling."
+      },
+      {
+        "day": "Day 2",
+        "title": "Tiger Hill Sunrise & Darjeeling Sightseeing",
+        "description": "Early morning visit to Tiger Hill for sunrise over Kanchenjunga (weather permitting). After breakfast, visit Himalayan Mountaineering Institute, Padmaja Naidu Himalayan Zoological Park, Tibetan Refugee Self Help Center, and Tea Garden. Overnight stay in Darjeeling."
+      },
+      {
+        "day": "Day 3",
+        "title": "Darjeeling Local Tour",
+        "description": "After breakfast, visit Batasia Loop, Ghoom Monastery, Japanese Temple, and Peace Pagoda. Enjoy a ride on the famous Darjeeling Toy Train (subject to availability). Evening free for shopping at Mall Road. Overnight stay in Darjeeling."
+      },
+      {
+        "day": "Day 4",
+        "title": "Departure",
+        "description": "After breakfast, check-out from hotel. Transfer to NJP Railway Station/Bagdogra Airport for your onward journey."
+      }
+    ],
+    "createdAt": "2025-05-01T19:03:37.712Z"
   }
 ]

@@ -7,18 +7,62 @@
     "transmission": "automatic",
     "ac": true,
     "dailyRate": 3500,
-    "imageUrl": "https://images.unsplash.com/photo-1489824904134-891ab64532f1?q=80&w=1200&auto=format&fit=crop",
+    "imageUrl": "https://i.ibb.co/BXWtsSp/Toyota-Innova-Crysta-2020.webp",
     "description": "Spacious and comfortable SUV perfect for family trips across Sikkim's varied terrain."
   },
   {
     "id": "car2",
-    "model": "Mahindra Thar",
-    "category": "Jeep",
-    "seats": 4,
+    "model": "Mahindra Scorpio",
+    "category": "SUV",
+    "seats": 7,
     "transmission": "manual",
     "ac": true,
-    "dailyRate": 2800,
-    "imageUrl": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop",
-    "description": "Rugged and reliable 4x4 ideal for adventure enthusiasts and off-road experiences."
+    "dailyRate": 3000,
+    "imageUrl": "https://i.ibb.co/WWJ33f6c/scorpio-exterior-right-front-three-quarter-47.webp",
+    "description": "Powerful SUV with excellent ground clearance for handling Sikkim's mountain roads."
+  },
+  {
+    "id": "car3",
+    "model": "Maruti Suzuki Dzire",
+    "category": "Sedan",
+    "seats": 5,
+    "transmission": "automatic",
+    "ac": true,
+    "dailyRate": 2000,
+    "imageUrl": "https://i.ibb.co/5hqtMYKP/Maruti-Suzuki-New-Dzire-111120241412.jpg",
+    "description": "Fuel-efficient sedan for comfortable rides on well-paved roads around urban areas."
+  },
+  {
+    "id": "car4",
+    "model": "Toyota Glanza",
+    "category": "Hatchback",
+    "seats": 5,
+    "transmission": "automatic",
+    "ac": true,
+    "dailyRate": 1800,
+    "imageUrl": "https://www.galaxytoyota.in/public/storage/1030/car-blue-(2).png",
+    "description": "Compact and stylish hatchback perfect for city tours and short trips."
+  },
+  {
+    "id": "car5",
+    "model": "Mahindra Bolero",
+    "category": "SUV",
+    "seats": 7,
+    "transmission": "manual",
+    "ac": true,
+    "dailyRate": 2500,
+    "imageUrl": "https://i.ibb.co/795ptsx/front-left-side-47.jpg",
+    "description": "Rugged and reliable workhorse with excellent off-road capabilities for remote areas."
+  },
+  {
+    "id": "car6",
+    "model": "Mahindra Bolero Neo",
+    "category": "SUV",
+    "seats": 7,
+    "transmission": "manual",
+    "ac": true,
+    "dailyRate": 2700,
+    "imageUrl": "https://stimg.cardekho.com/images/carexteriorimages/930x620/Mahindra/Bolero-Neo/10766/1690267562292/rear-left-view-121.jpg",
+    "description": "Modern take on the classic Bolero with improved comfort and features for long journeys."
   }
 ]

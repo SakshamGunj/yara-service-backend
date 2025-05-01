@@ -1,22 +1,52 @@
 [
   {
     "id": "bike1",
-    "model": "Royal Enfield Himalayan",
+    "model": "Royal Enfield Himalayan 450",
     "category": "Adventure",
-    "engineCapacity": "411cc",
-    "dailyRate": 1200,
+    "engineCapacity": "450cc",
+    "dailyRate": "Contact for price",
     "gearType": "manual",
-    "imageUrl": "https://images.unsplash.com/photo-1558981285-6f0c94958bb6?q=80&w=1200&auto=format&fit=crop",
-    "description": "Purpose-built for the Himalayas, this adventure bike handles rough terrain with ease."
+    "imageUrl": "https://i.ibb.co/S4FCQScF/krcee13g-royal-enfield-himalayan-450-650-625x300-24-November-23.webp",
+    "description": "The upgraded Himalayan with more power and better off-road capabilities, perfect for Sikkim's mountain trails."
   },
   {
     "id": "bike2",
-    "model": "Royal Enfield Classic 350",
+    "model": "Hero XPulse 200",
+    "category": "Dual Sport",
+    "engineCapacity": "200cc",
+    "dailyRate": "Contact for price",
+    "gearType": "manual",
+    "imageUrl": "https://i.ibb.co/pBgDPPpV/hero-xpulse-200-modified-2021-price-3.jpg",
+    "description": "Lightweight adventure bike ideal for beginners and those wanting to explore tight mountain roads."
+  },
+  {
+    "id": "bike3",
+    "model": "Honda Activa",
+    "category": "Scooter",
+    "engineCapacity": "110cc",
+    "dailyRate": "Contact for price",
+    "gearType": "automatic",
+    "imageUrl": "https://i.ibb.co/k26csJsw/download.jpg",
+    "description": "Convenient automatic scooter for easy city rides and short trips around Gangtok."
+  },
+  {
+    "id": "bike4",
+    "model": "Royal Enfield 350",
     "category": "Cruiser",
     "engineCapacity": "350cc",
-    "dailyRate": 900,
+    "dailyRate": "Contact for price",
     "gearType": "manual",
-    "imageUrl": "https://images.unsplash.com/photo-1609630875171-b1321377ee65?q=80&w=1200&auto=format&fit=crop",
-    "description": "Iconic retro styling with reliable performance for comfortable touring around Sikkim."
+    "imageUrl": "https://i.ibb.co/n8wczcTJ/2023-Royal-Enfield-Bullet-350-1693620256587-1711424746913.webp",
+    "description": "Classic motorcycle with timeless design, perfect for cruising around Sikkim's scenic roads."
+  },
+  {
+    "id": "bike5",
+    "model": "Himalayan 411",
+    "category": "Adventure",
+    "engineCapacity": "411cc",
+    "dailyRate": "Contact for price",
+    "gearType": "manual",
+    "imageUrl": "https://i.ibb.co/rP69FNg/royalenfieldhimalayan411-3.jpg",
+    "description": "Versatile adventure motorcycle built for exploring Sikkim's challenging terrain and mountain passes."
   }
 ]
